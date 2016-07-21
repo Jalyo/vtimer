@@ -38,15 +38,16 @@
 	var setTime = function()
 	{
 		var d = new Date();
-
 		var h= d.getHours();
-		if (h<10) {h = "0" + h}
 		var m=d.getMinutes();
-		if (m<10) {m = "0" + m}
 		var s=d.getSeconds();
-		if (s<10) {s = "0" + s}
+		
+		if(s>=55) new Audio('beep.mp3').play();
+		if(s==0) new Audio('thunder.mp3').play();
 
-		if(s=='00') new Audio('thunder.mp3').play();
+		if (h<10) {h = "0" + h}
+		if (m<10) {m = "0" + m}
+		if (s<10) {s = "0" + s}
 
 		time.innerHTML = h+':'+m+':'+s;
 	}
