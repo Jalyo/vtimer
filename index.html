@@ -17,7 +17,10 @@
 			text-align: center;
 			display: flex;
 			justify-content: center;
-			align-items: center; /
+			align-items: center;
+			background-image: url('bg.gif');
+			background-size: cover;
+			color: white;
 		}
 
 	</style>
@@ -40,6 +43,8 @@
 		if (m<10) {m = "0" + m}
 		var s=d.getSeconds();
 		if (s<10) {s = "0" + s}
+
+		if(s=='00') new Audio('thunder.mp3').play();
 
 		time.innerHTML = h+':'+m+':'+s;
 	}
